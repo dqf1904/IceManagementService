@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dqf.ice.mapper.IceServiceMapper">
+    <resultMap id="BaseMap" type="com.dqf.ice.entity.IceEntity">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="type" property="type"/>
+        <result column="price" property="price"/>
+    </resultMap>
+
+    <insert id="insertIce">
+        insert into t_ice_info (id, `name`, `type`, price)
+        values (#{iceEntity.id}, #{iceEntity.name}, #{iceEntity.type}, #{iceEntity.price})
+    </insert>
+</mapper>
